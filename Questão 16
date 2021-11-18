@@ -1,0 +1,19 @@
+package ufra.poo.lista1;
+
+public class Q15 {
+    public static void main(String[] args) {
+        
+        int[] d1 = {1, 2, 3, 4, 5, 6}; 
+        int[] d2 = {1, 2, 3, 4, 5, 6}; 
+        int[] d3 = {1, 2, 3, 4, 5, 6};
+        int i;
+        
+        System.out.println("Possíveis Resultados do Lançamentos de 3 dados:");
+        for(i = 1; i < 7; i++){
+            for(d1[i] = i; i < 7; d1[i]++){
+                for(d2[i] = i; i < 7; d2[i]++){
+                    for(d3[i] = i; i < 7; d3[i]++){
+                        System.out.println(d1[i]+","+d2[i]+","+d3[i]+"|");
+                        if(d1[i] == 6 | d2[i] == 6 | d3[i] == 6){
+                            System.out.println("Total de resultados possíveis: "+(6*6*6));}
+                    }}}}}}
