@@ -1,0 +1,75 @@
+package ufra.poo.lista1;
+import java.util.*;
+
+public class Q16 {
+    public static void main(String[] args) {
+        Scanner ler = new Scanner(System.in);
+    
+        String[] nome = new String[20]; 
+        String menorMulher = null;
+        char[] sexo = new char[20];
+        double[] alturaM = new double[20];
+        double[] alturaF = new double[20];
+        int i, nHomens = 0, nMulheres = 0;
+        double maiorM = 0, menorM = 0, maiorF = 0, menorF = 0;
+        double media, soma = 0;
+        
+        for(i = 0; i < 4; i++){
+            System.out.println("Informe os dados da "+(i+1)+"ª pessoa:");
+            System.out.println("Seu sexo: (F ou M)");
+            sexo[i] = ler.next().charAt(0);          
+            switch(sexo[i]){
+                case 'M':
+                    System.out.println("Seu nome:");
+                    nome[i] = ler.next();
+                    System.out.println("Sua altura:");
+                    alturaM[i] = ler.nextDouble();
+                    if(i == 0){
+                        menorM = alturaM[i];
+                        maiorM = alturaM[i];
+                    }
+                    else if(alturaM[i] < menorM){	
+                        menorM = alturaM[i];
+                    }
+                    else if(alturaM[i] > maiorM){	
+                        maiorM = alturaM[i];
+                    }                
+                    nHomens++; 
+                    break;
+                case 'F':
+                    System.out.println("Seu nome:");
+                    nome[i] = ler.next();
+                    System.out.println("Sua altura:");
+                    alturaF[i] = ler.nextDouble();
+                    if(i == 0){
+                        menorF = alturaF[i];
+                        maiorF = alturaF[i];
+                    }
+                    else if(alturaF[i] < menorF){	
+                        menorF = alturaF[i];
+                        menorMulher = nome[i];
+                    }
+                    else if(alturaF[i] > maiorF){	
+                        maiorF = alturaF[i];
+                    }
+                    soma = soma + alturaF[i];
+                    nMulheres++;                    
+                    break;
+                default:
+                    System.out.println("Opção inválida!");
+                    break;
+            }      
+        }
+        media = soma / nMulheres;
+        System.out.println("");
+        System.out.println("Número de homens: " + nHomens);
+        System.out.printf("Menor altura da pessoa do grupo Masculino: %.2f \n", menorM);
+        System.out.printf("Maior altura da pessoa do grupo Masculino: %.2f \n\n", maiorM);
+        
+        System.out.println("Número de mulheres: " + nMulheres);
+        System.out.printf("Menor altura da pessoa do grupo Feminino: %.2f \n", menorF);
+        System.out.printf("Maior altura da pessoa do grupo Feminino: %.2f \n", maiorF);
+        System.out.printf("Média de altura das mulheres: %.2f \n", media);
+        System.out.println("Nome da mulher com a menor altura: " + menorMulher);
+    }
+}
