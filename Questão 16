@@ -17,7 +17,7 @@ public class Q16 {
         int i = 0, nHomens = 0, nMulheres = 0;        
         
         System.out.println("Informe os dados da 1ª pessoa:");
-        System.out.println("Seu sexo: (1 p/ M ou 2 p/ F)");
+        System.out.println("Seu sexo: (Aperte 1 p/ M ou Aperte 2 p/ F)");
         sexo[0] = ler.nextInt();
         
         if(sexo[0] == 1){
@@ -43,7 +43,7 @@ public class Q16 {
         }
         for(i = 1; i < 10; i++){
             System.out.println("Informe os dados da "+(i+1)+"ª pessoa:");
-            System.out.println("Seu sexo: (1 p/ M ou 2 p/ F)");
+            System.out.println("Seu sexo: (Aperte 1 p/ M ou Aperte 2 p/ F)");
             sexo[i] = ler.nextInt();          
                 
             if(sexo[i] == 1){
